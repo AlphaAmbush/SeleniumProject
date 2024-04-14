@@ -74,8 +74,6 @@ def loggedIn(request):
         by="id", value=loginPage['userName']).send_keys("standard_user")
     driver.find_element(by="id", value=loginPage['passWord']).send_keys(
         get_pass("standard_user") + Keys.RETURN)
-    with open("cookies.json", 'w') as filehandler:
-        json.dump(driver.get_cookies(), filehandler)
     return driver
 
 # We are taking a screenshot if any test fail
