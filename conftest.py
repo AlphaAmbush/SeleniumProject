@@ -4,6 +4,7 @@ import os
 import pytest
 import chromedriver_autoinstaller
 import time
+import signal
 
 from cryptography.fernet import Fernet
 import pytest_html
@@ -32,29 +33,8 @@ def pytest_addoption(parser):
                      help='Specify the key to decode the password')
 
 
-# start the browser
-@pytest.fixture(scope="session")
-def unLoggedIn(request):
-    head = request.config.getoption('--head')
-
-    # Set options to make browsing easier
-    options = webdriver.ChromeOptions()
-    options.add_argument("disable-infobars")
-    options.add_argument("start-maximized")
-    options.add_argument("disable-dev-shm-usage")
-    options.add_argument("no-sandbox")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_argument("disable-blink-features=AutomationControlled")
-    if (head == "headless"):
-        options.add_argument('--headless')
-    global driver  # making driver global to be able to use it to take screenshot
-    driver = webdriver.Chrome(options=options)
-    driver.implicitly_wait(10)  # timeout for all selenium options
-    return driver
-
-
 @pytest.fixture(scope='session')
-def loggedIn(request):
+def setup(request):
     head = request.config.getoption('--head')
 
     # Set options to make browsing easier
@@ -105,6 +85,5 @@ def pytest_sessionfinish(session, exitstatus):
     total_tests = session.testscollected
     failed_tests = session.testsfailed
     passed_test = total_tests - failed_tests
-
-
-# pytest --html=report.html --self-contained-html --head headless
+    driver.quit()
+    # pytest --html=report.html --self-contained-html --head headless

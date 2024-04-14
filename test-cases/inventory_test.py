@@ -60,8 +60,8 @@ def ascendingTest(A):
 
 
 @pytest.mark.integration
-def test_add_remove_to_cart(loggedIn):
-    driver = loggedIn
+def test_add_remove_to_cart(setup):
+    driver = setup
     driver.get('https://www.saucedemo.com/inventory.html')
     driver.find_element(By.XPATH, inventoryPage['back_pack_add_xpath']).click()
     cartText = driver.find_element(By.XPATH, inventoryPage['cart_logo']).text
@@ -75,8 +75,8 @@ def test_add_remove_to_cart(loggedIn):
 
 
 @pytest.mark.integration
-def test_check_sorting_name_ascending(loggedIn):
-    driver = loggedIn
+def test_check_sorting_name_ascending(setup):
+    driver = setup
     driver.get('https://www.saucedemo.com/inventory.html')
     Select(driver.find_element(
         By.XPATH, inventoryPage['sorting_select_xpath'])).select_by_value('az')
@@ -86,8 +86,8 @@ def test_check_sorting_name_ascending(loggedIn):
 
 
 @pytest.mark.integration
-def test_check_sorting_name_descending(loggedIn):
-    driver = loggedIn
+def test_check_sorting_name_descending(setup):
+    driver = setup
     driver.get('https://www.saucedemo.com/inventory.html')
     Select(driver.find_element(
         By.XPATH, inventoryPage['sorting_select_xpath'])).select_by_value('za')
@@ -97,8 +97,8 @@ def test_check_sorting_name_descending(loggedIn):
 
 
 @pytest.mark.integration
-def test_check_sorting_cost_ascending(loggedIn):
-    driver = loggedIn
+def test_check_sorting_cost_ascending(setup):
+    driver = setup
     driver.get('https://www.saucedemo.com/inventory.html')
     Select(driver.find_element(
         By.XPATH, inventoryPage['sorting_select_xpath'])).select_by_value('lohi')
@@ -108,8 +108,8 @@ def test_check_sorting_cost_ascending(loggedIn):
 
 
 @pytest.mark.integration
-def test_check_sorting_cost_descending(loggedIn):
-    driver = loggedIn
+def test_check_sorting_cost_descending(setup):
+    driver = setup
     driver.get('https://www.saucedemo.com/inventory.html')
     Select(driver.find_element(
         By.XPATH, inventoryPage['sorting_select_xpath'])).select_by_value('hilo')

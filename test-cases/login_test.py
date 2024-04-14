@@ -15,8 +15,8 @@ from SeleniumProject.objects.helper import screenshot
 # all the sanity tests are marked with a marker to make it easy to run
 # only the sanity tests
 @pytest.mark.sanity
-def test_login_std_user(unLoggedIn):
-    driver = unLoggedIn
+def test_login_std_user(setup):
+    driver = setup
     driver.get("https://www.saucedemo.com/")
     driver.find_element(
         by="id", value=loginPage['userName']).send_keys("standard_user")
@@ -29,8 +29,8 @@ def test_login_std_user(unLoggedIn):
 
 # this login user generates an error message
 @pytest.mark.sanity
-def test_login_locked_out(unLoggedIn):
-    driver = unLoggedIn
+def test_login_locked_out(setup):
+    driver = setup
     driver.get("https://www.saucedemo.com/")
     driver.find_element(
         by="id", value=loginPage['userName']).send_keys("locked_out_user")

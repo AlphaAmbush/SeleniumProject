@@ -12,8 +12,8 @@ from SeleniumProject.objects.helper import screenshot
 
 
 @pytest.mark.sanity
-def test_checkout(loggedIn):
-    driver = loggedIn
+def test_checkout(setup):
+    driver = setup
     driver.find_element(By.XPATH, inventoryPage['back_pack_add_xpath']).click()
     driver.find_element(By.XPATH, inventoryPage['jacket_add_xpath']).click()
     driver.find_element(
