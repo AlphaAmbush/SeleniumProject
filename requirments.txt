@@ -1,0 +1,4 @@
+chromedriver-autoinstaller
+selenium
+pytest-html
+cryptography
