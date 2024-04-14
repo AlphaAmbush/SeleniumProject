@@ -26,8 +26,6 @@ def pytest_configure(config):
 
 
 def pytest_addoption(parser):
-    parser.addoption('--mail', action='store', default='ajinkyaakotkar7@gmail.com',
-                     help='Specify the mail-id to mail the results')
     parser.addoption('--head', action='store', default='headed',
                      help='Specify for "headless" or "headed" mode')
     parser.addoption('--key', action='store', default='vTPPw-kknNKQogckY3V942H4FwcN5ZQUvWtlP7cZ4Qw=',  # key is added by default for convenience
