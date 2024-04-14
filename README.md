@@ -43,3 +43,7 @@ To run the tests in headless mode, use the `--head` flag followed by `headless`:
 7. Generates test reports using the `pytest-html` module.
 8. Organized into separate modules for test cases, page objects, and helper classes.
 9. Supports headless mode for running tests without GUI.
+
+
+![image](https://github.com/AlphaAmbush/SeleniumProject/assets/89270361/999286e0-3f53-45d0-a15b-e480be1b1c2f)
+
