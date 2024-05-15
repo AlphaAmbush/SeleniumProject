@@ -1,6 +1,6 @@
 # Selenium UI Testing Project for https://www.saucedemo.com
 
-This project automates UI testing for the website https://www.saucedemo.com using Python and pytest.
+This project automates UI testing for the website https://www.saucedemo.com using Python, Selenium and pytest.
 
 ## Requirements
 
