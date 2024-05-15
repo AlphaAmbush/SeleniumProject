@@ -3,3 +3,4 @@ __pycache__/
 *.py[cod]
 assets
 report.html
+.pytest_cache
