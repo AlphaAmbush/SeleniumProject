@@ -24,7 +24,7 @@ To run the tests, ensure that you have the following installed on your system:
 
 To run the test cases, execute the following command:
     ```
-    pytest
+    pytest --html=pytest_report.html
     ```
 
 
