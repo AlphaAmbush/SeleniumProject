@@ -24,6 +24,10 @@ To run the tests, ensure that you have the following installed on your system:
 
 To run the test cases, execute the following command:
 
+    ```
+    pytest
+    ```
+
 
 The test report will be generated and stored in the `report.html` file in the project's base folder.
 
