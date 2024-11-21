@@ -23,10 +23,8 @@ To run the tests, ensure that you have the following installed on your system:
 ## Running the Tests
 
 To run the test cases, execute the following command:
-
     ```
     pytest
-    
     ```
 
 
